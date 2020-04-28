@@ -16,8 +16,7 @@ selected_data<-na.omit(selected_data)
 ## PLOTTING DATA
 
 #Plt3
-par(cex=0.8)
-png(file="plot3.png")
+png(file="plot3.png",height=480,width=480)
 datetime<-selected_data$Date+selected_data$Time
 selected_data$Sub_metering_1<-as.numeric(selected_data$Sub_metering_1)
 selected_data$Sub_metering_2<-as.numeric(selected_data$Sub_metering_2)

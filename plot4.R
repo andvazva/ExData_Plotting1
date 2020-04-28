@@ -17,18 +17,17 @@ selected_data<-na.omit(selected_data)
 
 #Plt4
 
-png(file="plot4.png")
+png(file="plot4.png",height=480,width=480)
 
 par(mfrow=c(2,2))
-par(cex=0.6)
 datetime<-selected_data$Date+selected_data$Time
 selected_data$Global_active_power<-as.numeric(selected_data$Global_active_power)
-with(selected_data,plot(datetime,Global_active_power,type="l"),xlab="Global Active Power (kilowatts)")
+with(selected_data,plot(datetime,Global_active_power,type="l",ylab="Global Active Power (kilowatts)",xlab=" "))
 
 selected_data$Voltage<-as.numeric(selected_data$Voltage)
 with(selected_data,plot(datetime,Voltage,type="l"),xlab="Global Active Power (kilowatts)")
 
-par(cex=0.6)
+
 selected_data$Sub_metering_1<-as.numeric(selected_data$Sub_metering_1)
 selected_data$Sub_metering_2<-as.numeric(selected_data$Sub_metering_2)
 selected_data$Sub_metering_3<-as.numeric(selected_data$Sub_metering_3)
@@ -39,9 +38,9 @@ points(datetime,selected_data$Sub_metering_2,type="l",col="red")
 points(datetime,selected_data$Sub_metering_3,type="l",col="blue")
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"),lty=1,bty="n")
 
-par(cex=0.6)
+
 
 selected_data$Global_reactive_power<-as.numeric(selected_data$Global_reactive_power)
-with(selected_data,plot(datetime,Global_reactive_power,type="l"),xlab="Global_reactive_power")
+with(selected_data,plot(datetime,Global_reactive_power,type="l"))
 
 dev.off()

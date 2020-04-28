@@ -16,10 +16,10 @@ selected_data<-na.omit(selected_data)
 ## PLOTTING DATA
 
 #Plt2
-png(file="plot2.png")
+png(file="plot2.png",height=480,width=480)
 datetime<-selected_data$Date+selected_data$Time
 selected_data$Global_active_power<-as.numeric(selected_data$Global_active_power)
-with(selected_data,plot(datetime,Global_active_power,type="l"),xlab="Global Active Power (kilowatts)")
+with(selected_data,plot(datetime,Global_active_power,type="l",ylab="Global Active Power (kilowatts)",xlab=" "))
 
 dev.off()
 

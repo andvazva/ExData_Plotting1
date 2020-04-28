@@ -17,7 +17,7 @@ selected_data<-subset(data,data$Date %within% int)
 
 #Plt1
 selected_data$Global_active_power<-as.numeric(selected_data$Global_active_power)
-png(file="plot1.png")
+png(file="plot1.png",height=480,width=480)
 hist(selected_data$Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)")
 dev.off()
 
